@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="style.css">
+
+<!-- Hero Section -->
+<div class="position-relative mb-5">
+    <img src="/media/home/hero1.png" class="img-fluid w-100" style="height:450px; object-fit:cover;" alt="Explore the world">
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-4">
+        <h1 class="display-3 fw-bold">Explore The World With Us</h1>
+        <p class="lead">Discover amazing destinations, travel guides, and unforgettable experiences tailored just for you.</p>
+        <p>From majestic mountains to sun-soaked beaches, we offer travel packages for every kind of traveler.</p>
+    </div>
+</div>
+
+<!-- About Intro Section -->
+<div class="container my-5">
+    <h2 class="text-center fw-bold mb-3">Welcome to TravelBuddy</h2>
+    <p class="text-center text-muted mb-4">
+        At TravelBuddy, we believe that travel is more than just sightseeing — it’s about creating lifelong memories,
+        discovering new cultures, and living experiences that enrich your life. Whether you’re planning your first
+        adventure or your next getaway, our experts craft customized packages that fit your style, budget, and
+        travel dreams.
+    </p>
+</div>
+
+<!-- Why Choose Us -->
+<div class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Why Choose TravelBuddy?</h2>
+    <div class="row g-4 align-items-center">
+
+        <div class="col-md-4 text-center">
+            <img src="/media/home/mountains.jpg" class="img-fluid rounded mb-3 shadow" alt="Adventure Trips">
+            <h5 class="fw-bold">Adventure Trips</h5>
+            <p class="text-muted px-3">
+                Conquer rugged mountain trails, scenic valleys, and thrilling landscapes. Our adventure trips are
+                perfect for adventurers seeking adrenaline and breathtaking views.
+            </p>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <img src="/media/home/beach.png" class="img-fluid rounded mb-3 shadow" alt="Beach Getaways">
+            <h5 class="fw-bold">Beach Getaways</h5>
+            <p class="text-muted px-3">
+                Relaxation meets paradise. Discover pristine sandy beaches, turquoise waters and luxury beach resorts.
+                Perfect for couples, families, and friends alike.
+            </p>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <img src="/media/home/city.png" class="img-fluid rounded mb-3 shadow" alt="City Tours">
+            <h5 class="fw-bold">City & Cultural Tours</h5>
+            <p class="text-muted px-3">
+                Experience world-class cities full of history, culture, cuisine, nightlife and architectural wonders.
+                Let us guide you through the most iconic urban adventures.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Popular Destinations Section -->
+<div class="container my-5">
+    <h2 class="text-center fw-bold mb-3">Popular Destinations</h2>
+    <p class="text-center text-muted mb-4">
+        Browse our best-selling travel packages and discover destinations loved by travelers worldwide.
+    </p>
+
+    {% load static %}
+
+    
+        <div class="container">
+            
+
+        <!-- your existing destination cards here -->
+
+        <!-- Banner Image at the end -->
+            <div style="width: 100%;
+                        max-width: 1500px;
+                        height: 750px;
+                        margin: 30px auto;
+                        overflow: hidden;" class="img-fluid rounded mb-3 shadow">
+                <img src="/media/home/travelbuddy_banner.png" style="width: 100%;height: 100%; object-fit: cover; display: block;"
+                alt="Discover Amazing Destinations">
+            </div>
+
+
+        </div>
+    </section>
+
+    <div class="row g-4">
+        {% for package in packages %}
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+                <img src="{{ package.image.url }}" class="card-img-top" style="height:200px; object-fit:cover;" alt="{{ package.title }}">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ package.title }}</h5>
+                    <p class="card-text text-muted">{{ package.subtitle }}</p>
+                    <p class="fw-bold text-primary">₹{{ package.price }}</p>
+                    <a href="{% url 'book_package' package.id %}" 
+                        class="btn btn-outline-primary w-100">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

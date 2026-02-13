@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh;">
+
+    <div class="card shadow p-4" style="width: 420px; border-radius: 15px;">
+        
+        <h2 class="text-center mb-4">User Login</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+
+            <!-- Username -->
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                {{ form.username }}
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                {{ form.password }}
+            </div>
+
+    
+
+            <button type="submit" class="btn btn-success w-100 mt-2">
+                Login
+            </button>
+
+            <div class="text-center mt-3">
+                Don't have an account?
+                <a href="{% url 'register' %}">Sign Up</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

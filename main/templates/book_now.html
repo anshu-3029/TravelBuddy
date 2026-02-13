@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+
+            <div class="card shadow-lg p-4 rounded-4 border-0">
+
+                <h2 class="text-center fw-bold mb-2">
+                    Book: {{ package.title }}
+                </h2>
+
+                <h4 class="text-center text-primary fw-bold mb-4">
+                    ₹{{ package.price }}
+                </h4>
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-danger text-center">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Full Name</label>
+                        <input type="text" name="full_name" class="form-control form-control-lg" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Email</label>
+                        <input type="email" name="email" class="form-control form-control-lg" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Phone</label>
+                        <input type="tel" name="phone" class="form-control form-control-lg" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Travel Date</label>
+                        <input type="date" name="travel_date" class="form-control form-control-lg" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Number of Persons</label>
+                        <input type="number" name="persons" class="form-control form-control-lg" min="1" value="1" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100 btn-lg rounded-3">
+                        Confirm Booking
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

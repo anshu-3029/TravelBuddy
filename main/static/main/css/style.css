@@ -1,0 +1,193 @@
+/* Popular Destinations Section */
+.popular-destinations {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* ===== ABOUT HERO SECTION ===== */
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;   /* ✅ FIXED HEIGHT */
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.about-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* ✅ CROPS IMAGE NICELY */
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45); /* dark overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.about-hero-overlay h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.about-hero-overlay p {
+    font-size: 18px;
+    max-width: 700px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-hero {
+        height: 300px;
+    }
+
+    .about-hero-overlay h1 {
+        font-size: 32px;
+    }
+
+    .about-hero-overlay p {
+        font-size: 15px;
+    }
+}
+
+/* ===== What We Value Section ===== */
+.values-section {
+    background: #f4f8fb;
+    padding: 80px 20px;
+}
+
+.values-container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.values-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #0b4c5f;
+    margin-bottom: 10px;
+}
+
+.values-subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.values-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    color: #fff;
+}
+
+/* Icon colors */
+.value-icon.globe {
+    background: #1abc9c;
+}
+
+.value-icon.care {
+    background: #3498db;
+}
+
+.value-icon.rocket {
+    background: #e67e22;
+}
+
+.value-card h3 {
+    font-size: 22px;
+    color: #0b4c5f;
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+.navbar-custom {
+    background-color: #0f5c6e;   /* Teal background */
+    padding: 12px 0;
+}
+
+.brand-logo {
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-logo img {
+    width: 32px;
+    margin-right: 8px;
+}
+
+.brand-travel {
+    color: #f4c430;   /* Yellow */
+}
+
+.brand-buddy {
+    color: #1e90ff;   /* Blue */
+}
+
+.navbar-custom .nav-link {
+    color: white !important;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #f4c430 !important;
+}
+
+
